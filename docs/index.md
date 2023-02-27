@@ -5,5 +5,5 @@ blog:
   name: "Blog"
   motto: 好好生活，慢慢相遇
   inspiring: 不要辜负本该奋斗的青春💪
-  pageSize: 6
+  pageSize: 10
 ---
