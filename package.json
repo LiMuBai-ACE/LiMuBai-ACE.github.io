@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
-    "serve": "vitepress serve docs"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
   },
   "dependencies": {
-    "@sugarat/theme":"^0.1.0",
+    "@sugarat/theme": "^0.1.0",
     "vue": "^3.2.45",
     "@element-plus/icons-vue": "^2.0.10",
     "element-plus": "^2.2.28"
