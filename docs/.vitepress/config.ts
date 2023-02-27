@@ -40,8 +40,9 @@ export default defineConfig({
         'MIT Licensed | <a target="_blank" href="https://github.com/limubai1223/"> 我的github </a>',
     },
     nav: [
-      { text: "我的", link: "/about" },
-      { text: "标签", link: "/tag/index" },
+      { text: "Bug", link: "/pages/bug/" },
+      { text: "标签", link: "/pages/tag/" },
+      { text: "我的", link: "/pages/about/" },
     ],
     logo: "/logo.png",
     // editLink: {
