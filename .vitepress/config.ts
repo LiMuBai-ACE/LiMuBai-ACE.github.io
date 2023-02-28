@@ -137,7 +137,6 @@ export default defineConfig({
           { text: "模板工程", link: "/pages/technology/tpl/" },
           { text: "源码学习", link: "/pages/technology/source/" },
           { text: "技术概念", link: "/pages/technology/theory/" },
-          { text: "个人作品", link: "/pages/technology/works/" },
           { text: "学习笔记", link: "/pages/technology/study/" },
         ],
       },
