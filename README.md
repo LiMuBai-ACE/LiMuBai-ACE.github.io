@@ -7,8 +7,6 @@ tags:
 
 ## :sparkles:当下
 
-![图片](https://img.cdn.sugarat.top/mdImg/MTYwNDcyMTQ4NTMyOA==604721485328)
-
 巩固自己的基础知识，完善博客中规划的剩余内容
 
 提升技术深度
