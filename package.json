@@ -1,5 +1,5 @@
 {
-  "name": "vitepress-blog",
+  "name": "blog",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -18,6 +18,6 @@
     "typescript": "^4.8.2",
     "vitepress": "1.0.0-alpha.47"
   },
-  "author": "粥里有勺糖",
+  "author": "LiMuBai",
   "license": "MIT"
 }

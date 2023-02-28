@@ -1,29 +1,22 @@
-# vitepress @sugarat/theme
-简约风的 [Vitepress 博客主题](https://theme.sugarat.top)
+---
+title: 关于自己
+date: 2021-12-11
+tags:
+  - 其它
+---
 
-## Usage
-先安装 `pnpm`
+## :sparkles:当下
 
-```sh
-npm i -g pnpm
-```
+![图片](https://img.cdn.sugarat.top/mdImg/MTYwNDcyMTQ4NTMyOA==604721485328)
 
-安装依赖
-```sh
-pnpm install
-```
+巩固自己的基础知识，完善博客中规划的剩余内容
 
-开发启动
-```sh
-pnpm dev
-```
+提升技术深度
 
-构建
-```sh
-pnpm build
-```
+## :rocket:未来
 
-预览产物
-```sh
-pnpm serve
-```
+沉淀技术,广度与深度 3/7 分，打磨自己做的一些小应用,确定自己最终深挖的领域
+
+## :pencil:座右铭
+
+你的指尖,拥有改变世界的力量:smile:

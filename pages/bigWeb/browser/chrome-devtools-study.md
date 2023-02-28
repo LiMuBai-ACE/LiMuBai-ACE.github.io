@@ -1,54 +1,59 @@
 ---
 sidebar:
- title: Chrome-DevTools的小技巧
- step: 9999
+  title: Chrome-DevTools的小技巧
+  step: 9999
 title: 分享小册《Chrome-DevTools的使用技巧》中的精华
 date: 2021-05-17
 tags:
- - 大前端
- - 浏览器
+  - 大前端
+  - 浏览器
 categories:
- - 大前端
+  - 大前端
 ---
-# 分享小册《Chrome-DevTools的使用技巧》中的精华
+
+# 分享小册《Chrome-DevTools 的使用技巧》中的精华
 
 ## 前言
-花了大概半天时间 温习了一遍（主要是忘了O(∩_∩)O哈哈~）[掘金小册：你不知道的 Chrome 调试技巧](https://juejin.cn/book/6844733783166418958)-> [开源免费版链接](https://www.frontendwingman.com/Chrome/)
+
+花了大概半天时间 温习了一遍（主要是忘了 O(∩_∩)O 哈哈~） [开源免费版链接](https://www.frontendwingman.com/Chrome/)
 
 和大家分享一些个人认为比较实用的内容，感兴趣的朋友推荐去阅读一下这本小册
 
-## 查看详细Chrome版本信息
+## 查看详细 Chrome 版本信息
+
 浏览器中输入[chrome://version/](chrome://version/)查看
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MDM4NTEyMw==621240385123)
 
 ## 预设代码块
+
 可以将一些高频使用的`工具脚本`代码块保存下来，下次使用可以直接调用
 
 ### 例如:查看掘金页面中已加载的文章
+
 ```js
 {
-    const posts = $$('.title-row>a');
-    console.table(posts,['textContent','href']);
+  const posts = $$(".title-row>a");
+  console.table(posts, ["textContent", "href"]);
 }
 ```
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MjcyNjA4Mw==621242726083)
 
-接下来复用这个代码块,在Source面板的 snippets中新建一个Snippet并将代码块写入
+接下来复用这个代码块,在 Source 面板的 snippets 中新建一个 Snippet 并将代码块写入
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYxNzc5ODI4Mzc2Nw==617798283767)
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0Mjk1MzAzMw==621242953033)
 
-从今以后就可以直接command运行，通过指令运行 `!scriptName`即可执行脚本
+从今以后就可以直接 command 运行，通过指令运行 `!scriptName`即可执行脚本
 
-tips: 默认打开Command会有一个 `>` 记得先删除
+tips: 默认打开 Command 会有一个 `>` 记得先删除
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MzAyODY3Mg==621243028672)
 
+## Command 面板
 
-## Command面板
 快捷键 Ctrl + Shift + P
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MTgxODMyMw==621241818324)
@@ -59,41 +64,44 @@ tips: 默认打开Command会有一个 `>` 记得先删除
 
 ![](https://img.cdn.sugarat.top/mdImg/MTYxNzc5NzM3MzkzMg==617797373932)
 
-* 页面截图: Capture full size screenshot
-* 指定区域: Capture area screenshot
-* 指定DOM节点: Capture node screenshot
-* 当前屏幕: Capture screenshot
+- 页面截图: Capture full size screenshot
+- 指定区域: Capture area screenshot
+- 指定 DOM 节点: Capture node screenshot
+- 当前屏幕: Capture screenshot
 
-### 显示console时间戳
+### 显示 console 时间戳
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MjAxMzgwNQ==621242013805)
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MjA0NDg0MA==621242044840)
 
+## Console 面板相关
 
-## Console面板相关
+### copy 方法
 
-### copy方法
-有一个全局的`copy`方法，可以在console面板中**复制任何能够拿到的资源到剪贴板中**
+有一个全局的`copy`方法，可以在 console 面板中**复制任何能够拿到的资源到剪贴板中**
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MDc2NjkzMQ==621240766931)
 
-
 ### $符号
+
 #### $number
-$0 是对我们当前在 Element面板 中选中的 html 节点的引用
+
+$0 是对我们当前在 Element 面板 中选中的 html 节点的引用
 
 $1 是对上一次我们选择的节点的引用， $2 是对在那之前选择的节点的引用以此类推,直到 $4
 
 ![](https://img.cdn.sugarat.top/mdImg/MTYxNzc5OTMzNTA4MQ==617799335081)
 
 #### $与$$
-* $ 等价于 document.querySelector()
-* \$$ 等价于 document.querySelectorAll()
+
+- $ 等价于 document.querySelector()
+- \$$ 等价于 document.querySelectorAll()
 
 ![](https://img.cdn.sugarat.top/mdImg/MTYxNzc5OTUxNzIwNw==617799517207)
 
-#### $_
+#### $\_
+
 上次打印结果的引用
 
 ![](https://img.cdn.sugarat.top/mdImg/MTYxNzc5OTc2NjQ4Ng==617799766486)
@@ -108,14 +116,15 @@ $1 是对上一次我们选择的节点的引用， $2 是对在那之前选择�
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MTQzNzg0NQ==621241437845)
 
-### time与timeEnd
+### time 与 timeEnd
+
 `console.time`与`console.timeEnd`，两个方法配合计算并打印时间戳
 
 通常用于测试方法的执行时间
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTI0MTY3NDgxNg==621241674816)
 
-## Network面板
+## Network 面板
 
 ### Filter
 
@@ -137,7 +146,7 @@ $1 是对上一次我们选择的节点的引用， $2 是对在那之前选择�
 
 ## Drawer
 
-`ESC`控制打开/关闭Drawer
+`ESC`控制打开/关闭 Drawer
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTIyMDg1NTk2NQ==621220855965)
 
@@ -147,8 +156,8 @@ $1 是对上一次我们选择的节点的引用， $2 是对在那之前选择�
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTIyMDkxOTIxNg==621220919216)
 
-### 查看更改Change
-在Element面板中更改元素的样式可以在这直接查看
+### 查看更改 Change
+
+在 Element 面板中更改元素的样式可以在这直接查看
 
 ![图片](https://img.cdn.sugarat.top/mdImg/MTYyMTIyNDQxMjE4OQ==621224412189)
-
