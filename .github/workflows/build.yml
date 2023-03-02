@@ -1,49 +1,32 @@
-# ci脚本的名称
-name: blog
-# 触发的时机
+name: Deploy VitePress
+
 on:
-  # 在push阶段触发
   push:
-    # 对应的分支
-    branches: [main]
-  # 在PR阶段触发
-  pull_request:
-    # 对应的分支
-    branches: [main]
-# 执行的任务
+    branches:
+      - main # 当代码被推送到 main 分支时触发工作流程。
+
 jobs:
-  # 任务名称
-  build:
-    # 执行的环境，默认是在最新版本的Ubuntu系统
-    runs-on: ubuntu-latest
-    # 执行的步骤
+  deploy:
+    runs-on: ubuntu-latest # 在最新版本的 Ubuntu 上运行。
+
     steps:
-      # checkout代码
-      # 其中actions是github官方账号，checkout是改账号下提供的库，可以直接拿来使用，对应的版本是v2
-      # setup-node同上
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        # 设置node的版本
-        with:
-          node-version: "14"
-        # 执行步骤的名称
-      - name: Compiling start
-        # 执行的具体脚本
-        run: echo Compiling start!
-        # 如果在执行的时候报错，提示需要用户名跟邮箱，那么需要单独设置下邮箱跟用户名
+      - name: Checkout # 检出代码。
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies # 安装依赖。
+        run: |
+          npm install
+
+      - name: Build # 构建站点。
+        run: |
+          npm run build
+
+      # 如果在执行的时候报错，提示需要用户名跟邮箱，那么需要单独设置下邮箱跟用户名
       - run: git config --global user.email "1440955662@qq.com"
       - run: git config --global user.name "limubai"
-        # 执行安装跟打包命令
-      - run: npm install && npm run build
 
-        # 部署到 GitHub Pages
-      - name: Deploy
-        # 使用别人写好的一个 action
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+      - name: Deploy # 部署站点。
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          # 这里的 ACCESS_TOKEN 名字需要和下文中的相对应
-          ACCESS_TOKEN: ${{ secrets.BLOG_ACTIONS_TOKEN }}
-          # 打包后的文件部署到哪个分支上
-          BRANCH: gh-pages
-          # 打包后的文件在哪里
-          FOLDER: .vitepress/dist
+          github_token: ${{ secrets.BLOG_ACTIONS_TOKEN }} # 从 GitHub Actions 的 Secrets 中获取 GitHub Token。
+          publish_dir: .vitepress/dist # 发布目录为 .vitepress/dist。
