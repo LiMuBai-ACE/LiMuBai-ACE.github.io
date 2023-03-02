@@ -5,11 +5,11 @@ on:
   # 在push阶段触发
   push:
     # 对应的分支
-    branches: [ main ]
+    branches: [main]
   # 在PR阶段触发
   pull_request:
     # 对应的分支
-    branches: [ main ]
+    branches: [main]
 # 执行的任务
 jobs:
   # 任务名称
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v2
         # 设置node的版本
         with:
-          node-version: '14'
+          node-version: "14"
         # 执行步骤的名称
       - name: Compiling start
         # 执行的具体脚本
@@ -35,15 +35,15 @@ jobs:
       - run: git config --global user.name "limubai"
         # 执行安装跟打包命令
       - run: npm install && npm run build
+
+        # 部署到 GitHub Pages
       - name: Deploy
-        # 这个是第三方提供的库，可以推送打包后的内容到指定分支
-        uses: peaceiris/actions-gh-pages@v3
+        # 使用别人写好的一个 action
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          # 这边需要设置第二步获取到的deploy key，否则会提示没有权限推送代码
-          deploy_key: ${{ secrets.BLOG_ACTIONS_TOKEN }}
-          # 推送到该仓库中，地址格式为github名称/仓库名
-          external_repository: limubai1223/limubai-Blog
-          # 推送的分支
-          publish_branch: gh-pages
-          # 推送的内容
-          publish_dir: .vuepress/dist
+          # 这里的 ACCESS_TOKEN 名字需要和下文中的相对应
+          ACCESS_TOKEN: ${{ secrets.BLOG_ACTIONS_TOKEN }}
+          # 打包后的文件部署到哪个分支上
+          BRANCH: gh-pages
+          # 打包后的文件在哪里
+          FOLDER: .vuepress/dist
