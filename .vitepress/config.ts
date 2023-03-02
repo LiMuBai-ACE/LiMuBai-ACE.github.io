@@ -41,7 +41,7 @@ const blogTheme = getThemeConfig({
   //     url: "https://vitepress.vuejs.org/",
   //   },
   // ],
-  search: false,
+  // search: false,
 });
 
 const extraHead: any =
