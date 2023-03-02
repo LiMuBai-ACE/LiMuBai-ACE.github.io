@@ -21,12 +21,13 @@ jobs:
         run: |
           npm run build
 
-        # 如果在执行的时候报错，提示需要用户名跟邮箱，那么需要单独设置下邮箱跟用户名
-      - run: git config --global user.email "1440955662@qq.com"
-      - run: git config --global user.name "limubai"
-
       - name: Deploy # 部署站点。
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.BLOG_ACTIONS_TOKEN }} # 从 GitHub Actions 的 Secrets 中获取 GitHub Token。
           publish_dir: .vitepress/dist # 发布目录为 .vitepress/dist。
+
+
+      # 如果在执行的时候报错，提示需要用户名跟邮箱，那么需要单独设置下邮箱跟用户名
+      # - run: git config --global user.email "1440955662@qq.com"
+      # - run: git config --global user.name "limubai"
