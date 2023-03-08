@@ -24,13 +24,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Install Dependencies # 安装依赖。
-        run: |
-          yarn
+        # 安装依赖
+      - run: yarn
 
-      - name: Build # 构建站点。
-        run: |
-            yarn .build
+      # 打包构建
+      - run: yarn build
 
         # 如果在执行的时候报错，提示需要用户名跟邮箱，那么需要单独设置下邮箱跟用户名
       - run: git config --global user.email "1440955662@qq.com"
