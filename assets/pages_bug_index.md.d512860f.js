@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a}from"./app.ff7114bc.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"pages/bug/index.md","lastUpdated":1678347021000}'),s={name:"pages/bug/index.md"};function n(r,o,c,d,p,i){return a(),t("div")}const f=e(s,[["render",n]]);export{m as __pageData,f as default};
