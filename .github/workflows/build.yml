@@ -12,19 +12,29 @@ jobs:
     steps:
       - name: Checkout # 检出代码。
         uses: actions/checkout@v2
+        
+    # 缓存依赖
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-      - name: Install Dependencies # 安装依赖。
-        run: |
-          npm install
+        # 安装依赖
+      - run: yarn
 
-      - name: Build # 构建站点。
-        run: |
-          npm run build
+      # 打包构建
+      - run: yarn build
 
       - name: Deploy # 部署站点。
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.BLOG_ACTIONS_TOKEN }} # 从 GitHub Actions 的 Secrets 中获取 GitHub Token。
+          personal_token: ${{ secrets.ACCESS_TOKEN }} # 访问秘钥
+          publish_branch: gh-pages # 推送分支
           publish_dir: .vitepress/dist # 发布目录为 .vitepress/dist。
 
 
