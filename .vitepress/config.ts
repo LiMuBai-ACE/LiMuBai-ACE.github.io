@@ -44,33 +44,33 @@ const blogTheme = getThemeConfig({
   // search: false,
 });
 
-const extraHead: any =
-  process.env.NODE_ENV === "production"
-    ? [
-        [
-          "script",
-          {
-            charset: "UTF-8",
-            id: "LA_COLLECT",
-            src: "//sdk.51.la/js-sdk-pro.min.js",
-          },
-        ],
-        [
-          "script",
-          {},
-          'LA.init({id: "Jgmg5avjAUvoyePS",ck: "Jgmg5avjAUvoyePS",hashMode: true})',
-        ],
-        [
-          "script",
-          {},
-          `if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.getRegistrations().then((registrations) => {
-            registrations.forEach(sw => sw.unregister())
-          })
-        }`,
-        ],
-      ]
-    : [];
+// const extraHead: any =
+//   process.env.NODE_ENV === "production"
+//     ? [
+//         [
+//           "script",
+//           {
+//             charset: "UTF-8",
+//             id: "LA_COLLECT",
+//             src: "//sdk.51.la/js-sdk-pro.min.js",
+//           },
+//         ],
+//         [
+//           "script",
+//           {},
+//           'LA.init({id: "Jgmg5avjAUvoyePS",ck: "Jgmg5avjAUvoyePS",hashMode: true})',
+//         ],
+//         [
+//           "script",
+//           {},
+//           `if ('serviceWorker' in navigator) {
+//           navigator.serviceWorker.getRegistrations().then((registrations) => {
+//             registrations.forEach(sw => sw.unregister())
+//           })
+//         }`,
+//         ],
+//       ]
+//     : [];
 
 export default defineConfig({
   lang: "zh-cmn-Hans",
